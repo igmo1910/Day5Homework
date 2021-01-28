@@ -18,7 +18,7 @@ namespace Day5Homework
             Console.WriteLine("6- Kampanya güncelle");
             Console.WriteLine("7- Kampanya sil");
             var selection = Convert.ToInt32(Console.ReadLine());
-
+             
             Customer customer = new Customer()
             {
                 Id = 1,
