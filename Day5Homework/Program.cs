@@ -42,7 +42,7 @@ namespace Day5Homework
                 Discount = 49.99
             };
 
-            IBaseService<Customer> customerManager = new CustomerManager();
+            IBaseService<Customer> customerManager = new CustomerManager(new UserCheckManager());
 
             IProductService productManager = new ProductManager();
 

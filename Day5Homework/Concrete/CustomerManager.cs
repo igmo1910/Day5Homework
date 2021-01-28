@@ -6,10 +6,17 @@ namespace Day5Homework.Concrete
 {
     public class CustomerManager : IBaseService<Customer>
     {
+        private IUserCheckService _userCheckService;
+
+        public CustomerManager(IUserCheckService userCheckService)
+        {
+            _userCheckService = userCheckService;
+        }
+
         public void Add(Customer customer)
         {
 
-            if (UserValidation(customer))
+            if (_userCheckService.ValidateUser(customer))
             {
                 Console.WriteLine(customer.FirstName + " oluşturuldu.");
             }
@@ -27,11 +34,6 @@ namespace Day5Homework.Concrete
         public void Delete(Customer customer)
         {
             Console.WriteLine(customer.FirstName + " silindi.");
-        }
-
-        public bool UserValidation(Customer customer)
-        {
-            return true;
         }
     }
 }
